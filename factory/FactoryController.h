@@ -1,9 +1,9 @@
 #pragma once
 
-#include "FactoryIf.h"
-
 #include <memory>
 #include <vector>
+
+#include "FactoryIf.h"
 
 namespace COPA
 {
@@ -13,7 +13,7 @@ class FactoryController
     FactoryController();
     virtual ~FactoryController();
 
-    void subscribe();
+    void subscribe( std::shared_ptr< FactoryIf > const factory );
     void list();
 
    private:
