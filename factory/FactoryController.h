@@ -3,11 +3,12 @@
 #include <map>
 #include <memory>
 
+#include "FactoryControllerIf.h"
 #include "FactoryIf.h"
 
 namespace COPA
 {
-class FactoryController
+class FactoryController : public FactoryControllerIf
 {
    public:
     FactoryController();
