@@ -4,19 +4,20 @@
 #include <memory>
 
 #include "ComponentIf.h"
+#include "ComponentControllerIf.h"
 #include "copa-pdk/factory/FactoryControllerIf.h"
 
 namespace COPA
 {
-class ComponentController
+class ComponentController : public ComponentControllerIf
 {
    public:
     ComponentController();
     ComponentController( std::shared_ptr< FactoryControllerIf > const &_factoryController );
     virtual ~ComponentController();
 
-    void create( std::string const &type, std::string const &name );
-    std::shared_ptr< ComponentIf > get( std::string const &type, std::string const &name );
+    virtual void create( std::string const &type, std::string const &name ) override;
+    virtual std::shared_ptr< ComponentIf > get( std::string const &type, std::string const &name ) override;
 
     void list();
 
