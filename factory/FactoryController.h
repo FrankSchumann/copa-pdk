@@ -1,7 +1,7 @@
 #pragma once
 
+#include <map>
 #include <memory>
-#include <vector>
 
 #include "FactoryIf.h"
 
@@ -15,10 +15,12 @@ class FactoryController
 
     void doSomething();
     void subscribe( std::shared_ptr< FactoryIf > const factory );
+    std::shared_ptr< FactoryIf > get( std::string const &type );
+
     void list();
 
    private:
-    static std::vector< std::shared_ptr< FactoryIf > > factories;
+    static std::map< std::string, std::shared_ptr< FactoryIf > > factories;
 };
 
 }
