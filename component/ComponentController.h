@@ -19,9 +19,7 @@ class ComponentController
     std::shared_ptr< ComponentIf > get( std::string const &type, std::string const &name );
 
    private:
-    static std::map< std::string, std::shared_ptr< ComponentIf > > components;
-
-    static std::map< std::string, std::map< std::string, std::shared_ptr< ComponentIf > > > components2;
+    static std::map< std::string, std::map< std::string, std::shared_ptr< ComponentIf > > > components;
 
     std::shared_ptr< FactoryControllerIf > factoryController;
 
