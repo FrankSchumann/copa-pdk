@@ -18,6 +18,8 @@ class ComponentController
     void create( std::string const &type, std::string const &name );
     std::shared_ptr< ComponentIf > get( std::string const &type, std::string const &name );
 
+    void list();
+
    private:
     static std::map< std::string, std::map< std::string, std::shared_ptr< ComponentIf > > > components;
 
