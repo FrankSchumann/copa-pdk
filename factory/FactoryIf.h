@@ -2,12 +2,14 @@
 
 #include <string>
 
+#include "copa-pdk/component/ComponentIf.h"
+
 namespace COPA
 {
 class FactoryIf
 {
    public:
-    virtual void create() = 0;
+    virtual std::shared_ptr< ComponentIf > create( std::string const &name ) = 0;
     virtual std::string getType() = 0;
 };
 
