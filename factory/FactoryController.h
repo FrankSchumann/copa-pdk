@@ -13,6 +13,7 @@ class FactoryController
     FactoryController();
     virtual ~FactoryController();
 
+    void doSomething();
     void subscribe( std::shared_ptr< FactoryIf > const factory );
     void list();
 
