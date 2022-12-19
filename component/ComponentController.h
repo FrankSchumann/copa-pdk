@@ -12,16 +12,21 @@ class ComponentController
 {
    public:
     ComponentController();
-    ComponentController(std::shared_ptr<FactoryControllerIf> const &_factoryController);
+    ComponentController( std::shared_ptr< FactoryControllerIf > const &_factoryController );
     virtual ~ComponentController();
 
-    void create(std::string const &name, std::string const &type);
-    std::shared_ptr<ComponentIf> get(std::string const &name);
+    void create( std::string const &type, std::string const &name );
+    std::shared_ptr< ComponentIf > get( std::string const &type, std::string const &name );
 
    private:
     static std::map< std::string, std::shared_ptr< ComponentIf > > components;
 
-    std::shared_ptr<FactoryControllerIf> factoryController;
+    static std::map< std::string, std::map< std::string, std::shared_ptr< ComponentIf > > > components2;
+
+    std::shared_ptr< FactoryControllerIf > factoryController;
+
+    std::map< std::string, std::shared_ptr< ComponentIf > > getComponentsSameType( std::string const &type );
+    std::shared_ptr< ComponentIf > getComponent( std::string const &name, std::map< std::string, std::shared_ptr< ComponentIf > > const &componentsSameType );
 };
 
 }
