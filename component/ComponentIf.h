@@ -7,9 +7,9 @@ namespace COPA
 class ComponentIf
 {
    public:
-    virtual std::string getType() = 0;
-    virtual std::string getName() = 0;
-    virtual std::string getVersion() = 0;
+    virtual std::string getType() const = 0;
+    virtual std::string getName() const = 0;
+    virtual std::string getVersion() const = 0;
 };
 
 }
