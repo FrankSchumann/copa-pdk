@@ -14,11 +14,10 @@ class FactoryController : public FactoryControllerIf
     FactoryController();
     virtual ~FactoryController();
 
-    void doSomething();
     void subscribe( std::shared_ptr< FactoryIf > const factory );
-    std::shared_ptr< FactoryIf > get( std::string const &type );
+    std::shared_ptr< FactoryIf > get( std::string const &type ) const;
 
-    void list();
+    void list() const;
 
    private:
     static std::map< std::string, std::shared_ptr< FactoryIf > > factories;
