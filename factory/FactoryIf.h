@@ -10,8 +10,8 @@ namespace COPA
 class FactoryIf
 {
    public:
-    virtual std::shared_ptr< ComponentIf > create( std::string const &name ) = 0;
-    virtual std::string getType() = 0;
+    virtual std::shared_ptr< ComponentIf > create( std::string const &name ) const = 0;
+    virtual std::string getType() const = 0;
 };
 
 }
