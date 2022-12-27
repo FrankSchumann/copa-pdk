@@ -12,7 +12,7 @@ class SemaphoreFactoryIf
     virtual std::shared_ptr< SemaphoreIf > create() const = 0;
 };
 
-class SemaphoreFactory : SemaphoreFactoryIf
+class SemaphoreFactory : public SemaphoreFactoryIf
 {
    public:
     SemaphoreFactory();

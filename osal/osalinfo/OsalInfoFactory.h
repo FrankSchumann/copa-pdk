@@ -12,7 +12,7 @@ class OsalInfoFactoryIf
     virtual std::shared_ptr< OsalInfoIf > create() const = 0;
 };
 
-class OsalInfoFactory : OsalInfoFactoryIf
+class OsalInfoFactory : public OsalInfoFactoryIf
 {
    public:
     OsalInfoFactory();
