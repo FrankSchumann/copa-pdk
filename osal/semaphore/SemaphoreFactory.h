@@ -16,7 +16,6 @@ class SemaphoreFactory : public SemaphoreFactoryIf
 {
    public:
     SemaphoreFactory();
-    virtual ~SemaphoreFactory();
 
     virtual std::shared_ptr< SemaphoreIf > create() const override;
 };
