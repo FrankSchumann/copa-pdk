@@ -12,7 +12,6 @@ class FactoryController : public FactoryControllerIf
 {
    public:
     FactoryController();
-    virtual ~FactoryController();
 
     void subscribe( std::shared_ptr< FactoryIf > const factory );
     std::shared_ptr< FactoryIf > get( std::string const &type ) const;

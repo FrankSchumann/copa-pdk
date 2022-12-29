@@ -14,7 +14,6 @@ class ComponentController : public ComponentControllerIf
    public:
     ComponentController();
     ComponentController( std::shared_ptr< FactoryControllerIf > const &_factoryController );
-    virtual ~ComponentController();
 
     virtual void create( std::string const &type, std::string const &name ) override;
     virtual std::shared_ptr< ComponentIf > get( std::string const &type, std::string const &name ) const override;
