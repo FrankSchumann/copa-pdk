@@ -26,10 +26,6 @@ class ComponentController : public ComponentControllerIf
     static std::map< std::string, std::map< std::string, std::shared_ptr< ComponentIf > > > components;
 
     std::shared_ptr< FactoryControllerIf > factoryController;
-
-    std::map< std::string, std::shared_ptr< ComponentIf > > getComponentsSameType( std::string const &type ) const;
-    std::shared_ptr< ComponentIf > getComponent( std::string const &name,
-                                                 std::map< std::string, std::shared_ptr< ComponentIf > > const &componentsSameType ) const;
 };
 
 }
