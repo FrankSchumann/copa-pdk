@@ -3,8 +3,8 @@
 #include <map>
 #include <memory>
 
-#include "ComponentIf.h"
 #include "ComponentControllerIf.h"
+#include "ComponentIf.h"
 #include "copa-pdk/factory/FactoryControllerIf.h"
 
 namespace COPA
@@ -17,6 +17,8 @@ class ComponentController : public ComponentControllerIf
 
     virtual void create( std::string const &type, std::string const &name ) override;
     virtual std::shared_ptr< ComponentIf > get( std::string const &type, std::string const &name ) const override;
+    virtual void erase( std::string const &type, std::string const &name ) override;
+    virtual void erase( std::string const &type );
 
     void list() const;
 
@@ -26,7 +28,8 @@ class ComponentController : public ComponentControllerIf
     std::shared_ptr< FactoryControllerIf > factoryController;
 
     std::map< std::string, std::shared_ptr< ComponentIf > > getComponentsSameType( std::string const &type ) const;
-    std::shared_ptr< ComponentIf > getComponent( std::string const &name, std::map< std::string, std::shared_ptr< ComponentIf > > const &componentsSameType ) const;
+    std::shared_ptr< ComponentIf > getComponent( std::string const &name,
+                                                 std::map< std::string, std::shared_ptr< ComponentIf > > const &componentsSameType ) const;
 };
 
 }
