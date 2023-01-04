@@ -18,7 +18,7 @@ class ComponentController : public ComponentControllerIf
     virtual void create( std::string const &type, std::string const &name ) override;
     virtual std::shared_ptr< ComponentIf > get( std::string const &type, std::string const &name ) const override;
     virtual void erase( std::string const &type, std::string const &name ) override;
-    virtual void erase( std::string const &type );
+    virtual void erase( std::string const &type ) override;
 
     void list() const;
 
