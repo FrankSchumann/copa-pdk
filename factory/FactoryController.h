@@ -13,9 +13,9 @@ class FactoryController : public FactoryControllerIf
    public:
     FactoryController();
 
-    void subscribe( std::shared_ptr< FactoryIf > const factory );
-    void unsubscribe( std::string const &type );
-    std::shared_ptr< FactoryIf > get( std::string const &type ) const;
+    void subscribe( std::shared_ptr< FactoryIf > const factory ) override;
+    void unsubscribe( std::string const &type ) override;
+    std::shared_ptr< FactoryIf > get( std::string const &type ) const override;
 
     void list() const;
 
